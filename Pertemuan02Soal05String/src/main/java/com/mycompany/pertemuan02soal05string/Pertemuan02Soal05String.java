@@ -15,19 +15,20 @@ public class Pertemuan02Soal05String {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Input strings
+        // Membaca dua string dari pengguna
         String A = scanner.nextLine();
         String B = scanner.nextLine();
         
-        // Step 1: Sum of lengths
+        // Step 1:(Menghitung jumlah panjang string A dan B
         int sumOfLengths = A.length() + B.length();
         System.out.println(sumOfLengths);
         
-        // Step 2: Check lexicographical order
+        // Step 2: Memeriksa urutan leksikografis antara A dan B
+        // Jika A > B dalam urutan leksikografis, maka "Yes", jika tidak, maka "No"
         String result = A.compareTo(B) > 0 ? "Yes" : "No";
         System.out.println(result);
         
-        // Step 3: Capitalize the first letters
+        // Mengkapitalisasi huruf pertama dari kedua string
         String capitalizedA = capitalizeFirstLetter(A);
         String capitalizedB = capitalizeFirstLetter(B);
         System.out.println(capitalizedA + " " + capitalizedB);
@@ -35,11 +36,12 @@ public class Pertemuan02Soal05String {
         scanner.close();
     }
     
-    // Helper method to capitalize the first letter
+    //Metode pembantu untuk mengkapitalisasi huruf pertama
     private static String capitalizeFirstLetter(String str) {
         if (str == null || str.isEmpty()) {
             return str;
         }
+        //Mengubah huruf pertama menjadi huruf besar dan menggabungkannya dengan sisa string
         return Character.toUpperCase(str.charAt(0)) + str.substring(1);
     }
 }
